@@ -6,4 +6,4 @@ We had to organise the experiment on two different scales:
   copy files with specified size to another folder in the same system 
   copy files with specified size to another system over the network using "nc" tool and two distinguished protocols: UDP and TCP
 
-apture network traffic utilising  TCPDUMP library (bash, Python,  C++, or Java)
+Capture network traffic utilising  TCPDUMP library (bash, Python,  C++, or Java)
