@@ -36,12 +36,6 @@ krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 > 1Kou
 
 hello
 ^C      
-krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc host.google.com 1234
-nc: getaddrinfo for host "host.google.com" port 1234: Name or service not known
-krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc google.com 1234
-^C
-krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc google.com 1234
-^[[A^C
 krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 > 1Kout.dat 
 krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 > 1Kout.dat 
 hi
@@ -165,24 +159,6 @@ usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
 	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
 	  [-X proxy_protocol] [-x proxy_address[:port]] 	  [destination] [port]
 krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc -v
-usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
-	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
-	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
-	  [-X proxy_protocol] [-x proxy_address[:port]] 	  [destination] [port]
-krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc --v
-nc: invalid option -- '-'
-usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
-	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
-	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
-	  [-X proxy_protocol] [-x proxy_address[:port]] 	  [destination] [port]
-krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc -V
-nc: option requires an argument -- 'V'
-usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
-	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
-	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
-	  [-X proxy_protocol] [-x proxy_address[:port]] 	  [destination] [port]
-krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc --V
-nc: invalid option -- '-'
 usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
 	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
 	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
