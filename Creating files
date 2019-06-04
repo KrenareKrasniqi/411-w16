@@ -1,3 +1,9 @@
+Files are created using the commands: 
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ dd if=/dev/zero of=1M.dat count=1 bs=1MB
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ dd if=/dev/zero of=10M.dat count=1 bs=10MB
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ dd if=/dev/zero of=100M.dat count=1 bs=100MB
+
+
 krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ dd if=/dev/zero
 ^C646896+0 records in
 646895+0 records out
@@ -281,7 +287,7 @@ krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$
 krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ 
 krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ 
 krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ ls
-10M.dat  1K.dat  1M.dat
+10M.dat  1K.dat  1M.dat 
 krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ cat 1K.dat | nc -l 1234
 krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ cat 1K.dat | nc -l 1234
 krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc -l 1234 <1K.dat
