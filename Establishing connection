@@ -1,0 +1,191 @@
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ssh 
+usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
+           [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]
+           [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
+           [-i identity_file] [-J [user@]host[:port]] [-L address]
+           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
+           [-w local_tun[:remote_tun]] destination [command]
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ssh user@192.168.88.36
+The authenticity of host '192.168.88.36 (192.168.88.36)' can't be established.
+ECDSA key fingerprint is SHA256:eCYSS+S8RaYqO7QkW/fS1cm4vttThd8LmdsshuODxF4.
+Are you sure you want to continue connecting (yes/no)? y
+Please type 'yes' or 'no': yes
+Warning: Permanently added '192.168.88.36' (ECDSA) to the list of known hosts.
+user@192.168.88.36's password: 
+Linux a12-203 4.9.0-8-amd64 #1 SMP Debian 4.9.110-3+deb9u6 (2018-10-08) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Tue Jan 29 06:25:32 2019
+user@a12-203:~$ ifconfig
+enp0s25: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 192.168.88.36  netmask 255.255.255.0  broadcast 192.168.88.255
+        inet6 fe80::219:99ff:fe5f:82b3  prefixlen 64  scopeid 0x20<link>
+        ether 00:19:99:5f:82:b3  txqueuelen 1000  (Ethernet)
+        RX packets 1804  bytes 516433 (504.3 KiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 946  bytes 84069 (82.0 KiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+        device interrupt 23  memory 0xfc400000-fc420000  
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 2  bytes 100 (100.0 B)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 2  bytes 100 (100.0 B)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+user@a12-203:~$ mkdir Week16
+mkdir: cannot create directory 'Week16': File exists
+user@a12-203:~$ ls- l
+-bash: ls-: command not found
+user@a12-203:~$ ls
+123            Downloads  RAE473_FALL 2018  bin          miniconda3    test1
+181AEM048.csv  Gowtham    Templates         data.txt     mynuddin      tmp
+181AEM079.txt  Music      Videos            develop      new.txt       weka.log
+1k.dat         Pictures   Week16            example.csv  report
+411            Public     a.txt             file.txt     tcp
+Documents      R          average1.tx       lalo         tcpserver.py
+user@a12-203:~$ mkdir week-16
+user@a12-203:~$ ls
+123            Downloads  RAE473_FALL 2018  bin          miniconda3    test1
+181AEM048.csv  Gowtham    Templates         data.txt     mynuddin      tmp
+181AEM079.txt  Music      Videos            develop      new.txt       week-16
+1k.dat         Pictures   Week16            example.csv  report        weka.log
+411            Public     a.txt             file.txt     tcp
+Documents      R          average1.tx       lalo         tcpserver.py
+user@a12-203:~$ cd week-16
+user@a12-203:~/week-16$ dd if=/dev/zero 10M.dat count=1 bs=10MB 
+dd: unrecognized operand '10M.dat'
+Try 'dd --help' for more information.
+user@a12-203:~/week-16$ dd if=/dev/zero of=10M.dat count=1 bs=10MB 
+1+0 records in
+1+0 records out
+10000000 bytes (10 MB, 9.5 MiB) copied, 0.0217983 s, 459 MB/s
+user@a12-203:~/week-16$ cat 10M.dat | nc -l 1234
+^C
+
+user@a12-203:~/week-16$ nc -l 1234 <10M.dat
+^C
+user@a12-203:~/week-16$ nc -l 1234 < 10M.dat
+^[[A^C
+user@a12-203:~/week-16$ nc -l 1234 < 10M.dat
+^C
+user@a12-203:~/week-16$ nc -l 1234 < 10M.dat
+^C
+user@a12-203:~/week-16$ ssh -X user@192.168.88.38 
+The authenticity of host '192.168.88.38 (192.168.88.38)' can't be established.
+RSA key fingerprint is SHA256:mzJt6Ny1C4Jjfh4m/LNJAvbt7rpvU45OmjpC9z7EMws.
+Are you sure you want to continue connecting (yes/no)? yes 
+Warning: Permanently added '192.168.88.38' (RSA) to the list of known hosts.
+user@192.168.88.38's password: 
+Welcome to Ubuntu 12.04.4 LTS (GNU/Linux 3.2.0-48-generic i686)
+
+ * Documentation:  https://help.ubuntu.com/
+
+New release '14.04.1 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Last login: Thu May 16 13:10:05 2019 from 192.168.88.39
+user@TI-308:~$ ls -l
+total 2124
+drwxrwxr-x  2 user user    4096 Nov  6  2017 171AEM050
+drwxrwxr-x  3 user user    4096 Feb  5 13:37 ABC
+drwxrwxr-x  2 user user    4096 Feb  5 13:12 CBC
+drwxr-xr-x  8 user user    4096 Feb 12 13:04 Desktop
+drwxr-xr-x  2 user user    4096 Dec 20 13:52 Documents
+drwxr-xr-x  5 user user    4096 Apr 11 09:54 Downloads
+drwxr-xr-x  2 user user    4096 Sep 19  2017 Music
+drwxr-xr-x  2 user user    4096 Sep 19  2017 Pictures
+drwxr-xr-x  2 user user    4096 Sep 19  2017 Public
+drwxrwxr-x  3 user user    4096 Nov 21 13:38 RAE473_FALL 2018
+drwxr-xr-x  2 user user    4096 Sep 19  2017 Templates
+drwxrwxr-x  2 user user    4096 Oct  3  2017 Test1_171AEM050
+drwxr-xr-x  2 user user    4096 Sep 19  2017 Videos
+-rw-rw-r--  1 user user       6 Sep 20  2017 a.txt
+-rw-rw-r--  1 user user     279 Apr 29 12:09 data1.txt
+drwxrwxr-x 13 user user    4096 Apr  2 16:40 miniconda3
+-rw-rw-r--  1 user user 5242880 Oct 10  2017 myfile.dat
+-rw-rw-r--  1 user user     922 Apr 29 12:02 namefile.txt
+-rw-rw-r--  1 user user     242 Oct 23  2017 octave-core
+-rw-rw-r--  1 user user 2082203 May  8 12:21 socket
+drwxrwxr-x  2 user user    4096 Sep 19  2017 viesis
+drwxrwxr-x  2 user user    4096 May 21 13:56 w18
+drwxr-xr-x  3 user user    4096 Dec 19  2016 weka-3-8-1
+drwxrwxr-x  7 user user    4096 Nov 13  2017 wekafiles
+user@TI-308:~$ cd w18
+user@TI-308:~/w18$ ls
+a.dat
+user@TI-308:~/w18$ nc -l 1234 > a.dat
+^[[A^C
+user@TI-308:~/w18$ nc -l 1234 < a.dat
+^C
+user@TI-308:~/w18$ ls -l
+total 0
+-rw-rw-r-- 1 user user 0 May 21 13:59 a.dat
+user@TI-308:~/w18$ nc -l 1234 < a.dat
+user@TI-308:~/w18$ nc
+This is nc from the netcat-openbsd package. An alternative nc is available
+in the netcat-traditional package.
+usage: nc [-46DdhklnrStUuvzC] [-i interval] [-P proxy_username] [-p source_port]
+	  [-s source_ip_address] [-T ToS] [-w timeout] [-X proxy_protocol]
+	  [-x proxy_address[:port]] [hostname] [port[s]]
+user@TI-308:~/w18$ nc -v
+This is nc from the netcat-openbsd package. An alternative nc is available
+in the netcat-traditional package.
+usage: nc [-46DdhklnrStUuvzC] [-i interval] [-P proxy_username] [-p source_port]
+	  [-s source_ip_address] [-T ToS] [-w timeout] [-X proxy_protocol]
+	  [-x proxy_address[:port]] [hostname] [port[s]]
+user@TI-308:~/w18$ nc -h
+OpenBSD netcat (Debian patchlevel 1.89-4ubuntu1)
+This is nc from the netcat-openbsd package. An alternative nc is available
+in the netcat-traditional package.
+usage: nc [-46DdhklnrStUuvzC] [-i interval] [-P proxy_username] [-p source_port]
+	  [-s source_ip_address] [-T ToS] [-w timeout] [-X proxy_protocol]
+	  [-x proxy_address[:port]] [hostname] [port[s]]
+	Command Summary:
+		-4		Use IPv4
+		-6		Use IPv6
+		-D		Enable the debug socket option
+		-d		Detach from stdin
+		-h		This help text
+		-i secs		Delay interval for lines sent, ports scanned
+		-k		Keep inbound sockets open for multiple connects
+		-l		Listen mode, for inbound connects
+		-n		Suppress name/port resolutions
+		-P proxyuser	Username for proxy authentication
+		-p port		Specify local port for remote connects
+		-q secs		quit after EOF on stdin and delay of secs
+		-r		Randomize remote ports
+ 		-S		Enable the TCP MD5 signature option
+		-s addr		Local source address
+		-T ToS		Set IP Type of Service
+		-C		Send CRLF as line-ending
+		-t		Answer TELNET negotiation
+		-U		Use UNIX domain socket
+		-u		UDP mode
+		-Z		DCCP mode
+		-v		Verbose
+		-w secs		Timeout for connects and final net reads
+		-X proto	Proxy protocol: "4", "5" (SOCKS) or "connect"
+		-x addr[:port]	Specify proxy address and port
+		-z		Zero-I/O mode [used for scanning]
+	Port numbers can be individual or ranges: lo-hi [inclusive]
+user@TI-308:~/w18$ nc -l 1234 < a.dat
+user@TI-308:~/w18$ nc -l 1234 < a.dat
+user@TI-308:~/w18$ nc -l 1234 < a.dat
+user@TI-308:~/w18$ Connection to 192.168.88.36 closed by remote host.
+Connection to 192.168.88.36 closed.
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ 
+
+
+
+
+
