@@ -1,0 +1,260 @@
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc 127.0.0.1 1234
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ rm -f /tmp/f
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc 127.0.0.1 1234 > 1Kout.dat 
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ls -l
+total 1108
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    1024 mai 21 13:10 1Kout.dat
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 15:19 Desktop
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 25 23:47 Documents
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai 17 14:53 Downloads
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    8980 apr 24 02:47 examples.desktop
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi 1048576 mai 21 11:20 file.txt
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      93 mai  7 12:03 index.html
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 27 00:13 Junk
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Music
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      11 mai  8 01:08 octave-workspace
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 13:58 Pictures
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Public
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai  7 12:38 snap
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Templates
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:43 test
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:44 test1
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 21:18 T.Software
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Videos
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 13:11 week14
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai 21 11:41 Week16
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ cd Week16
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 > 1Kout.dat 
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ ls
+10M.dat  1K.dat  1Kout.dat  1M.dat
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 > 1Kout.dat 
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 > 1Kout.dat 
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 > 1Kout.dat 
+
+hello
+^C      
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc host.google.com 1234
+nc: getaddrinfo for host "host.google.com" port 1234: Name or service not known
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc google.com 1234
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc google.com 1234
+^[[A^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 > 1Kout.dat 
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 > 1Kout.dat 
+hi
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ rm -f/tmp/f
+rm: invalid option -- '/'
+Try 'rm --help' for more information.
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ rm -f /tmp/f
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 <filename.in
+bash: filename.in: No such file or directory
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 <1K.in
+bash: 1K.in: No such file or directory
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 <1K.in
+bash: 1K.in: No such file or directory
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 > 1Kout.dat 
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ ls
+10M.dat  1K.dat  1K.out  1Kout.dat  1M.dat  filename.out
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ ls -l
+total 10796
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi 10000000 mai 21 11:49 10M.dat
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi     1024 mai 21 11:21 1K.dat
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi        0 mai 21 13:33 1K.out
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi        0 mai 21 13:33 1Kout.dat
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi  1048576 mai 21 11:26 1M.dat
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi        0 mai 21 13:28 filename.out
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc 127.0.0.1 1234 
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ ls -l
+total 10796
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi 10000000 mai 21 11:49 10M.dat
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi     1024 mai 21 11:21 1K.dat
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi        0 mai 21 13:33 1K.out
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi        0 mai 21 13:33 1Kout.dat
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi  1048576 mai 21 11:26 1M.dat
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi        0 mai 21 13:28 filename.out
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ cd ..
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ls -l
+total 1108
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    1024 mai 21 13:10 1Kout.dat
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 15:19 Desktop
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 25 23:47 Documents
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai 17 14:53 Downloads
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    8980 apr 24 02:47 examples.desktop
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi 1048576 mai 21 11:20 file.txt
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      93 mai  7 12:03 index.html
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 27 00:13 Junk
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Music
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      11 mai  8 01:08 octave-workspace
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 13:58 Pictures
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Public
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai  7 12:38 snap
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Templates
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:43 test
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:44 test1
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 21:18 T.Software
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Videos
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 13:11 week14
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai 21 13:29 Week16
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc 127.0.0.1 1234
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc 127.0.0.1 1234
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc 192.168.88.36 1234
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc 192.168.88.36 1234
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc 192.168.88.36 1234
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc 192.168.88.36 1234
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc 192.168.88.36 1234 > a.dat
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ls -l
+total 1108
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    1024 mai 21 13:10 1Kout.dat
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       0 mai 21 13:54 a.dat
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 15:19 Desktop
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 25 23:47 Documents
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai 17 14:53 Downloads
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    8980 apr 24 02:47 examples.desktop
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi 1048576 mai 21 11:20 file.txt
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      93 mai  7 12:03 index.html
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 27 00:13 Junk
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Music
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      11 mai  8 01:08 octave-workspace
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 13:58 Pictures
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Public
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai  7 12:38 snap
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Templates
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:43 test
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:44 test1
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 21:18 T.Software
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Videos
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 13:11 week14
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai 21 13:29 Week16
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc 192.168.88.38 1234 > a.dat
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ls -l
+total 11108
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi     1024 mai 21 13:10 1Kout.dat
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi 10240000 mai 21 14:01 a.dat
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi     4096 mai  7 15:19 Desktop
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi     4096 apr 25 23:47 Documents
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi     4096 mai 17 14:53 Downloads
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi     8980 apr 24 02:47 examples.desktop
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi  1048576 mai 21 11:20 file.txt
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       93 mai  7 12:03 index.html
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi     4096 apr 27 00:13 Junk
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi     4096 apr 24 05:53 Music
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       11 mai  8 01:08 octave-workspace
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi     4096 mai  7 13:58 Pictures
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi     4096 apr 24 05:53 Public
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi     4096 mai  7 12:38 snap
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi     4096 apr 24 05:53 Templates
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi        6 apr 26 00:43 test
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi        6 apr 26 00:44 test1
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi     4096 apr 30 21:18 T.Software
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi     4096 apr 24 05:53 Videos
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi     4096 apr 30 13:11 week14
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi     4096 mai 21 13:29 Week16
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc 
+usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
+	  [-X proxy_protocol] [-x proxy_address[:port]] 	  [destination] [port]
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc -v
+usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
+	  [-X proxy_protocol] [-x proxy_address[:port]] 	  [destination] [port]
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc --v
+nc: invalid option -- '-'
+usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
+	  [-X proxy_protocol] [-x proxy_address[:port]] 	  [destination] [port]
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc -V
+nc: option requires an argument -- 'V'
+usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
+	  [-X proxy_protocol] [-x proxy_address[:port]] 	  [destination] [port]
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc --V
+nc: invalid option -- '-'
+usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
+	  [-X proxy_protocol] [-x proxy_address[:port]] 	  [destination] [port]
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc -h
+OpenBSD netcat (Debian patchlevel 1.195-2)
+usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
+	  [-X proxy_protocol] [-x proxy_address[:port]] 	  [destination] [port]
+	Command Summary:
+		-4		Use IPv4
+		-6		Use IPv6
+		-b		Allow broadcast
+		-C		Send CRLF as line-ending
+		-D		Enable the debug socket option
+		-d		Detach from stdin
+		-F		Pass socket fd
+		-h		This help text
+		-I length	TCP receive buffer length
+		-i interval	Delay interval for lines sent, ports scanned
+		-k		Keep inbound sockets open for multiple connects
+		-l		Listen mode, for inbound connects
+		-M ttl		Outgoing TTL / Hop Limit
+		-m minttl	Minimum incoming TTL / Hop Limit
+		-N		Shutdown the network socket after EOF on stdin
+		-n		Suppress name/port resolutions
+		-O length	TCP send buffer length
+		-P proxyuser	Username for proxy authentication
+		-p port		Specify local port for remote connects
+		-q secs		quit after EOF on stdin and delay of secs
+		-r		Randomize remote ports
+		-S		Enable the TCP MD5 signature option
+		-s source	Local source address
+		-T keyword	TOS value
+		-t		Answer TELNET negotiation
+		-U		Use UNIX domain socket
+		-u		UDP mode
+		-V rtable	Specify alternate routing table
+		-v		Verbose
+		-W recvlimit	Terminate after receiving a number of packets
+		-w timeout	Timeout for connects and final net reads
+		-X proto	Proxy protocol: "4", "5" (SOCKS) or "connect"
+		-x addr[:port]	Specify proxy address and port
+		-Z		DCCP mode
+		-z		Zero-I/O mode [used for scanning]
+	Port numbers can be individual or ranges: lo-hi [inclusive]
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ssh user@ 192.168.88.36
+ssh: Could not resolve hostname : Name or service not known
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ssh user@192.168.88.36
+user@192.168.88.36's password: 
+Linux a12-203 4.9.0-8-amd64 #1 SMP Debian 4.9.110-3+deb9u6 (2018-10-08) x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Tue May 21 06:56:57 2019 from 192.168.88.39
+user@a12-203:~$ nc 192.168.88.38 1234
+(UNKNOWN) [192.168.88.38] 1234 (?) : Connection refused
+user@a12-203:~$ nc 192.168.88.38 1234
+user@a12-203:~$ time nc 192.168.88.38 1234
+
+real	0m1.095s
+user	0m0.000s
+sys	0m0.128s
+user@a12-203:~$ nc -v 192.168.88.38 1234
+192.168.88.38: inverse host lookup failed: Unknown host
+(UNKNOWN) [192.168.88.38] 1234 (?) open
+user@a12-203:~$ Connection to 192.168.88.36 closed by remote host.
+Connection to 192.168.88.36 closed.
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ 
