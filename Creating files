@@ -1,0 +1,310 @@
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ dd if=/dev/zero
+^C646896+0 records in
+646895+0 records out
+331210240 bytes (331 MB, 316 MiB) copied, 13,6578 s, 24,3 MB/s
+
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ dd if=/dev/zero of=file.txt count=1024 bs=1024
+1024+0 records in
+1024+0 records out
+1048576 bytes (1,0 MB, 1,0 MiB) copied, 0,0092266 s, 114 MB/s
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ls -l
+total 1100
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 15:19 Desktop
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 25 23:47 Documents
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai 17 14:53 Downloads
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    8980 apr 24 02:47 examples.desktop
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi 1048576 mai 21 11:08 file.txt
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      93 mai  7 12:03 index.html
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 27 00:13 Junk
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Music
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      11 mai  8 01:08 octave-workspace
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 13:58 Pictures
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Public
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai  7 12:38 snap
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Templates
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:43 test
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:44 test1
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 21:18 T.Software
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Videos
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 13:11 week14
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ~/tmp$ wc -l file.txt
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ dd if=/dev/zero of=file.txt bc=1 bs=1024
+dd: unrecognized operand ‘bc=1’
+Try 'dd --help' for more information.
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ dd --help
+Usage: dd [OPERAND]...
+  or:  dd OPTION
+Copy a file, converting and formatting according to the operands.
+
+  bs=BYTES        read and write up to BYTES bytes at a time (default: 512);
+                  overrides ibs and obs
+  cbs=BYTES       convert BYTES bytes at a time
+  conv=CONVS      convert the file as per the comma separated symbol list
+  count=N         copy only N input blocks
+  ibs=BYTES       read up to BYTES bytes at a time (default: 512)
+  if=FILE         read from FILE instead of stdin
+  iflag=FLAGS     read as per the comma separated symbol list
+  obs=BYTES       write BYTES bytes at a time (default: 512)
+  of=FILE         write to FILE instead of stdout
+  oflag=FLAGS     write as per the comma separated symbol list
+  seek=N          skip N obs-sized blocks at start of output
+  skip=N          skip N ibs-sized blocks at start of input
+  status=LEVEL    The LEVEL of information to print to stderr;
+                  'none' suppresses everything but error messages,
+                  'noxfer' suppresses the final transfer statistics,
+                  'progress' shows periodic transfer statistics
+
+N and BYTES may be followed by the following multiplicative suffixes:
+c =1, w =2, b =512, kB =1000, K =1024, MB =1000*1000, M =1024*1024, xM =M,
+GB =1000*1000*1000, G =1024*1024*1024, and so on for T, P, E, Z, Y.
+
+Each CONV symbol may be:
+
+  ascii     from EBCDIC to ASCII
+  ebcdic    from ASCII to EBCDIC
+  ibm       from ASCII to alternate EBCDIC
+  block     pad newline-terminated records with spaces to cbs-size
+  unblock   replace trailing spaces in cbs-size records with newline
+  lcase     change upper case to lower case
+  ucase     change lower case to upper case
+  sparse    try to seek rather than write the output for NUL input blocks
+  swab      swap every pair of input bytes
+  sync      pad every input block with NULs to ibs-size; when used
+            with block or unblock, pad with spaces rather than NULs
+  excl      fail if the output file already exists
+  nocreat   do not create the output file
+  notrunc   do not truncate the output file
+  noerror   continue after read errors
+  fdatasync  physically write output file data before finishing
+  fsync     likewise, but also write metadata
+
+Each FLAG symbol may be:
+
+  append    append mode (makes sense only for output; conv=notrunc suggested)
+  direct    use direct I/O for data
+  directory  fail unless a directory
+  dsync     use synchronized I/O for data
+  sync      likewise, but also for metadata
+  fullblock  accumulate full blocks of input (iflag only)
+  nonblock  use non-blocking I/O
+  noatime   do not update access time
+  nocache   Request to drop cache.  See also oflag=sync
+  noctty    do not assign controlling terminal from file
+  nofollow  do not follow symlinks
+  count_bytes  treat 'count=N' as a byte count (iflag only)
+  skip_bytes  treat 'skip=N' as a byte count (iflag only)
+  seek_bytes  treat 'seek=N' as a byte count (oflag only)
+
+Sending a USR1 signal to a running 'dd' process makes it
+print I/O statistics to standard error and then resume copying.
+
+Options are:
+
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <https://www.gnu.org/software/coreutils/>
+Full documentation at: <https://www.gnu.org/software/coreutils/dd>
+or available locally via: info '(coreutils) dd invocation'
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ dd if=/dev/zero of=file.txt count=1 bs=1024
+1+0 records in
+1+0 records out
+1024 bytes (1,0 kB, 1,0 KiB) copied, 0,000589895 s, 1,7 MB/s
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ dd if=/dev/zero of=file.txt count=1024 bs=1024
+1024+0 records in
+1024+0 records out
+1048576 bytes (1,0 MB, 1,0 MiB) copied, 0,00704728 s, 149 MB/s
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ dd if=/dev/zero of=file.txt count=1024 bs=1024
+1024+0 records in
+1024+0 records out
+1048576 bytes (1,0 MB, 1,0 MiB) copied, 0,00591457 s, 177 MB/s
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ls -l
+total 1100
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 15:19 Desktop
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 25 23:47 Documents
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai 17 14:53 Downloads
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    8980 apr 24 02:47 examples.desktop
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi 1048576 mai 21 11:20 file.txt
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      93 mai  7 12:03 index.html
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 27 00:13 Junk
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Music
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      11 mai  8 01:08 octave-workspace
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 13:58 Pictures
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Public
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai  7 12:38 snap
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Templates
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:43 test
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:44 test1
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 21:18 T.Software
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Videos
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 13:11 week14
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ dd if=/dev/zero of=1K.dat count=1 bs=1024
+1+0 records in
+1+0 records out
+1024 bytes (1,0 kB, 1,0 KiB) copied, 0,000675272 s, 1,5 MB/s
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ls -l
+total 1104
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    1024 mai 21 11:21 1K.dat
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 15:19 Desktop
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 25 23:47 Documents
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai 17 14:53 Downloads
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    8980 apr 24 02:47 examples.desktop
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi 1048576 mai 21 11:20 file.txt
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      93 mai  7 12:03 index.html
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 27 00:13 Junk
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Music
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      11 mai  8 01:08 octave-workspace
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 13:58 Pictures
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Public
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai  7 12:38 snap
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Templates
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:43 test
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:44 test1
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 21:18 T.Software
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Videos
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 13:11 week14
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ mkdir Week16
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ls -l
+total 1108
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    1024 mai 21 11:21 1K.dat
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 15:19 Desktop
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 25 23:47 Documents
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai 17 14:53 Downloads
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    8980 apr 24 02:47 examples.desktop
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi 1048576 mai 21 11:20 file.txt
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      93 mai  7 12:03 index.html
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 27 00:13 Junk
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Music
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      11 mai  8 01:08 octave-workspace
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 13:58 Pictures
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Public
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai  7 12:38 snap
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Templates
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:43 test
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:44 test1
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 21:18 T.Software
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Videos
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 13:11 week14
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai 21 11:22 Week16
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ cd 1K.dat Week16
+bash: cd: too many arguments
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ mv 1K.dat Week16
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ls -l
+total 1104
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 15:19 Desktop
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 25 23:47 Documents
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai 17 14:53 Downloads
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi    8980 apr 24 02:47 examples.desktop
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi 1048576 mai 21 11:20 file.txt
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      93 mai  7 12:03 index.html
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 27 00:13 Junk
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Music
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi      11 mai  8 01:08 octave-workspace
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai  7 13:58 Pictures
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Public
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 mai  7 12:38 snap
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Templates
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:43 test
+-rw-r--r-- 1 krenarekrasniqi krenarekrasniqi       6 apr 26 00:44 test1
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 21:18 T.Software
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 apr 24 05:53 Videos
+drwxr-xr-x 3 krenarekrasniqi krenarekrasniqi    4096 apr 30 13:11 week14
+drwxr-xr-x 2 krenarekrasniqi krenarekrasniqi    4096 mai 21 11:24 Week16
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ cd Week16
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ dd if=/dev/zero of=file.txt count=1024 bs=1024
+1024+0 records in
+1024+0 records out
+1048576 bytes (1,0 MB, 1,0 MiB) copied, 0,00707164 s, 148 MB/s
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ dd if=/dev/zero of=1M.dat count=1024 bs=1024
+1024+0 records in
+1024+0 records out
+1048576 bytes (1,0 MB, 1,0 MiB) copied, 0,00815659 s, 129 MB/s
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ ls
+1K.dat  1M.dat  file.txt
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ rm file.txt
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ ls
+1K.dat  1M.dat
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ 1K.dat
+1K.dat: command not found
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ dd if=/dev/zero of=10M.dat count=1 bs=10MB
+1+0 records in
+1+0 records out
+10000000 bytes (10 MB, 9,5 MiB) copied, 0,0158416 s, 631 MB/s
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ dd if=/dev/zero of=10M.dat count=1 bs=100MB
+1+0 records in
+1+0 records out
+100000000 bytes (100 MB, 95 MiB) copied, 0,791189 s, 126 MB/s
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ ls 
+10M.dat  1K.dat  1M.dat
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ dd if=/dev/zero of=10M.dat count=1 bs=10MB
+1+0 records in
+1+0 records out
+10000000 bytes (10 MB, 9,5 MiB) copied, 0,0284881 s, 351 MB/s
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ ls
+10M.dat  1K.dat  1M.dat
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ cd ..
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc
+usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+	  [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+	  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
+	  [-X proxy_protocol] [-x proxy_address[:port]] 	  [destination] [port]
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc -l 1234
+GET / HTTP/1.1
+Host: 127.0.0.1:1234
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:66.0) Gecko/20100101 Firefox/66.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc 127.0.0.1 1234
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ nc -l 1234
+
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ rm -f /tmp/f; mkfifo /tmp/f
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ cat /tmp/f | /bin/sh -i 2>&l | nc -l 127.0.0.1 1234 > /tmp/f
+bash: l: ambiguous redirect
+^C      
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ cat /tmp/f | /bin/sh -i 2>&1 | nc -l 127.0.0.1 1234 > /tmp/f
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ ls
+Desktop           file.txt    octave-workspace  Templates   Videos
+Documents         index.html  Pictures          test        week14
+Downloads         Junk        Public            test1       Week16
+examples.desktop  Music       snap              T.Software
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~$ cd Week16
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ cat 1
+cat: 1: No such file or directory
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ 
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ 
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ 
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ 
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ 
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ ls
+10M.dat  1K.dat  1M.dat
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ cat 1K.dat | nc -l 1234
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ cat 1K.dat | nc -l 1234
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc -l 1234 <1K.dat
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ cat 1K.dat | nc -l 1234
+
+hello
+
+hello
+
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ 
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ 
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ cat 1K.dat | nc -l 1234
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ cat 1K.dat | nc -l 1234
+hi
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc -l 1234 > filename.out
+
+^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc -l 1234 > 1K.out
+^[[A^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc -l 1234 > 1K.out
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc -l 1234 < 1K.out
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ nc -l 1234 < 1K.dat
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ ^C
+krenarekrasniqi@krenarekrasniqi-ThinkPad-T440:~/Week16$ 
